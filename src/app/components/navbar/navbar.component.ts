@@ -6,17 +6,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styles: `
-  nav {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-  }
+    nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .active {
-    color: #341162;
-    font-weight: bold;
-  }
-  `
+    .active {
+      color: #341162;
+      font-weight: bold;
+    }
+  `,
 })
-export class NavbarComponent { }
+export class NavbarComponent {}

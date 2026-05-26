@@ -4,7 +4,6 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
 export const routes: Routes = [
-
   {
     path: '',
     component: HomePageComponent,
@@ -20,6 +19,5 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: '',
-  }
-
+  },
 ];

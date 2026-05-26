@@ -6,7 +6,6 @@ import { Component, input, OnChanges, SimpleChanges } from '@angular/core';
   templateUrl: './title.component.html',
 })
 export class TitleComponent implements OnChanges {
-
   title = input.required<string>();
   title2 = input.required<string>();
 
@@ -19,7 +18,4 @@ export class TitleComponent implements OnChanges {
       console.log(`Is first ${inputName} change == ${inputValues.firstChange}`);
     }
   }
-
-
-
 }

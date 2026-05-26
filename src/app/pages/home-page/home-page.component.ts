@@ -1,9 +1,16 @@
-import { afterRender, afterRenderEffect, Component, effect, OnInit, signal } from '@angular/core';
+import {
+  afterRender,
+  afterRenderEffect,
+  Component,
+  effect,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
 
 const log = (...messages: string[]) => {
   console.log(`${messages[0]} %c${messages.slice(1).join(', ')}`, 'color: red');
-}
+};
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +18,6 @@ const log = (...messages: string[]) => {
   templateUrl: './home-page.component.html',
 })
 export class HomePageComponent implements OnInit {
-
   traditionalProperty = 'Marcelo';
   signalProperty = signal('Marcelo');
 
@@ -24,7 +30,7 @@ export class HomePageComponent implements OnInit {
     // }, 2000);
   }
 
-  changeTraditional(){
+  changeTraditional() {
     this.traditionalProperty = 'Marcelo Fuentes';
   }
 
@@ -37,11 +43,14 @@ export class HomePageComponent implements OnInit {
 
     onCleanup(() => {
       log('onCleanup', 'Se ejecuta cuando el efecto se va a destruir');
-    })
+    });
   });
 
   ngOnInit() {
-    log(`ngOnInit`, `Runs once after Angular has initialized all the component's inputs.`);
+    log(
+      `ngOnInit`,
+      `Runs once after Angular has initialized all the component's inputs.`,
+    );
   }
 
   ngOnChanges() {
@@ -54,19 +63,31 @@ export class HomePageComponent implements OnInit {
   }
 
   ngAfterContentInit() {
-    log(`ngAfterContentInit`, `Runs once after the component's content has been initialized.`);
+    log(
+      `ngAfterContentInit`,
+      `Runs once after the component's content has been initialized.`,
+    );
   }
 
   ngAfterContentChecked() {
-    log(`ngAfterContentChecked`, `Runs every time this component content has been checked for changes.`);
+    log(
+      `ngAfterContentChecked`,
+      `Runs every time this component content has been checked for changes.`,
+    );
   }
 
   ngAfterViewInit() {
-    log(`ngAfterViewInit`, `Runs once after the component's view has been initialized.`);
+    log(
+      `ngAfterViewInit`,
+      `Runs once after the component's view has been initialized.`,
+    );
   }
 
   ngAfterViewChecked() {
-    log(`ngAfterViewChecked`, `Runs every time the component's view has been checked for changes.`);
+    log(
+      `ngAfterViewChecked`,
+      `Runs every time the component's view has been checked for changes.`,
+    );
   }
 
   ngOnDestroy() {
@@ -74,13 +95,16 @@ export class HomePageComponent implements OnInit {
   }
 
   afterNextRenderEffect = afterRenderEffect(() => {
-    log('afterNextRenderEffect', 'Runs once the next time that all components have been rendered to the DOM.');
+    log(
+      'afterNextRenderEffect',
+      'Runs once the next time that all components have been rendered to the DOM.',
+    );
   });
 
   afterEveryRenderEffect = afterRender(() => {
-    log('afterEveryRenderEffect', 'Runs every time all components have been rendered to the DOM.');
+    log(
+      'afterEveryRenderEffect',
+      'Runs every time all components have been rendered to the DOM.',
+    );
   });
-
-
-
 }
